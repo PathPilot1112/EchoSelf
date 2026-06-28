@@ -1,10 +1,13 @@
 import React from "react";
 import Demo_Preview_Card from "./Demo_Preview_Card";
+import { WiStars } from "react-icons/wi";
+import { BsFillLightningChargeFill } from "react-icons/bs";
+import { IoFlowerOutline } from "react-icons/io5";
+import { GiRearAura } from "react-icons/gi";
 
 const Preview_Section = () => {
   return (
     <div className="w-full min-h-screen bg-zinc-100 flex flex-col items-center py-12 relative gap-12">
-      
       <h1 className="text-4xl font-grotesk font-medium underline underline-offset-8 z-20">
         YOUR IDENTITY PREVIEW
       </h1>
@@ -22,6 +25,24 @@ const Preview_Section = () => {
         >
           LOGIN TO UNLOCK
         </button>
+      </div>
+      <div className="flex justify-between items-center w-full px-[100px] mt-16 font-grotesk">
+        <div className="w-auto h-auto p-3 border border-4 shadow-xl/40 flex items-center justify-center">
+          <WiStars />
+          THE CHAMELEON
+        </div>
+        <div className="w-auto h-auto p-3 border border-4 shadow-xl/40 flex items-center justify-center">
+          <BsFillLightningChargeFill />
+          THE VIBRANT
+        </div>
+        <div className="w-auto h-auto p-3 border border-4 shadow-xl/40 flex items-center justify-center">
+          <IoFlowerOutline />
+          THE NOSTALGIC
+        </div>
+        <div className="w-auto h-auto p-3 border border-4 shadow-xl/40 flex items-center justify-center">
+          <GiRearAura />
+          THE ETHEREAL
+        </div>
       </div>
     </div>
   );
