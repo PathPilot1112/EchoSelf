@@ -6,6 +6,12 @@ import { IoFlowerOutline } from "react-icons/io5";
 import { GiRearAura } from "react-icons/gi";
 
 const Preview_Section = () => {
+
+    const handleScroll =()=>{
+        document.getElementById("preview").scrollIntoView({
+            behavior:"smooth"
+        });
+    };
   return (
     <div className="w-full min-h-screen bg-zinc-100 flex flex-col items-center py-12 relative gap-12">
       <h1 className="text-4xl font-grotesk font-medium underline underline-offset-8 z-20">
@@ -22,6 +28,7 @@ const Preview_Section = () => {
           w-1/4 p-5 bg-white text-black shadow-xl shadow-black
           border-4 border-black flex items-center justify-center gap-4
           text-3xl font-grotesk font-medium cursor-pointer z-20"
+          onClick={handleScroll}
         >
           LOGIN TO UNLOCK
         </button>

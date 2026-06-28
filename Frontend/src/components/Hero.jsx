@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="w-full h-screen bg-[url('/Hero_Bg.png')] bg-cover bg-center relative z-10">
       <Navbar />
-      <div className="w-full h-screen absolute top-0 flex flex-col items-center justify-center">
+      <div className="w-full h-screen absolute top-0 flex flex-col items-center justify-center" id="preview">
         <h1 className="text-gray-300 font-[1000] font-grotesk text-[132px]">ECHOSELF</h1>
         <p className="text-xl font-grotesk text-gray-300 mb-10">
           Your Sonic DNA,distilled. Connect your Spotify to generate<br/> your unique
