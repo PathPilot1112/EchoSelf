@@ -34,7 +34,7 @@ const LoadingPage = () => {
   useEffect(() => {
     if (step !== 3) return;
 
-    fetch("http://localhost:3000/analyse", { credentials: "include" })
+    fetch("https://echoself-ohd4.onrender.com/analyse", { credentials: "include" })
       .then((r) => r.json())
       .then((d) => { analysisData.current = d; })
       .catch((e) => console.error(e));

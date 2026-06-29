@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa";
 
 const Hero = () => {
   const handleLogin = () => {
-    window.location.href = "http://localhost:4000/login";
+    window.location.href = "https://echoself-ohd4.onrender.com/login";
   };
   return (
     <div className="w-full h-screen bg-[url('/Hero_Bg.png')] bg-cover bg-center relative z-10">
