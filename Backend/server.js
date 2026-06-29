@@ -62,7 +62,7 @@ app.get("/auth/callback", async (req, res) => {
     req.session.refresh_token = refresh_token;
 
 
-    res.redirect("http://localhost:5173/loading");
+    res.redirect("https://echoself-chi.vercel.app/loading");
 
   } catch (err) {
     console.error("Token exchange failed:", err.response?.data || err.message);
