@@ -6,53 +6,59 @@ import { IoFlowerOutline } from "react-icons/io5";
 import { GiRearAura } from "react-icons/gi";
 
 const Preview_Section = () => {
-
-    const handleScroll =()=>{
+    const handleScroll = () => {
         document.getElementById("preview").scrollIntoView({
-            behavior:"smooth"
+            behavior: "smooth",
         });
     };
-  return (
-    <div className="w-full min-h-screen bg-zinc-100 flex flex-col items-center py-12 relative gap-12">
-      <h1 className="text-4xl font-grotesk font-medium underline underline-offset-8 z-20">
-        YOUR IDENTITY PREVIEW
-      </h1>
 
-      <div className="flex-1 w-full flex items-center justify-center relative">
-        <div className="blur-sm">
-          <Demo_Preview_Card />
-        </div>
+    const personas = [
+        { icon: <WiStars />, title: "THE CHAMELEON" },
+        { icon: <BsFillLightningChargeFill />, title: "THE VIBRANT" },
+        { icon: <IoFlowerOutline />, title: "THE NOSTALGIC" },
+        { icon: <GiRearAura />, title: "THE ETHEREAL" },
+    ];
 
-        <button
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-          w-1/4 p-5 bg-white text-black shadow-xl shadow-black
-          border-4 border-black flex items-center justify-center gap-4
-          text-3xl font-grotesk font-medium cursor-pointer z-20"
-          onClick={handleScroll}
-        >
-          LOGIN TO UNLOCK
-        </button>
-      </div>
-      <div className="flex justify-between items-center w-full px-[100px] mt-16 font-grotesk">
-        <div className="w-auto h-auto p-3 border border-4 shadow-xl/40 flex items-center justify-center">
-          <WiStars />
-          THE CHAMELEON
+    return (
+        <div className="w-full min-h-screen bg-zinc-100 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-10 gap-12">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-grotesk font-medium underline underline-offset-8 text-center">
+                YOUR IDENTITY PREVIEW
+            </h1>
+
+            <div className="relative flex items-center justify-center w-full">
+                <div className="blur-sm scale-90 sm:scale-100">
+                    <Demo_Preview_Card />
+                </div>
+
+                <button
+                    onClick={handleScroll}
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+          w-full max-w-xs sm:max-w-sm md:max-w-md
+          border-4 border-black bg-white
+          px-6 py-4
+          text-lg sm:text-xl md:text-2xl
+          font-grotesk font-medium
+          shadow-xl shadow-black
+          cursor-pointer
+          transition hover:scale-105"
+                >
+                    LOGIN TO UNLOCK
+                </button>
+            </div>
+
+            <div className="grid w-full max-w-7xl grid-cols-2 lg:grid-cols-4 gap-4">
+                {personas.map((item) => (
+                    <div
+                        key={item.title}
+                        className="flex items-center justify-center gap-2 border-4 border-black bg-white p-4 shadow-xl/40 text-sm sm:text-base lg:text-lg"
+                    >
+                        <span className="text-xl">{item.icon}</span>
+                        <span>{item.title}</span>
+                    </div>
+                ))}
+            </div>
         </div>
-        <div className="w-auto h-auto p-3 border border-4 shadow-xl/40 flex items-center justify-center">
-          <BsFillLightningChargeFill />
-          THE VIBRANT
-        </div>
-        <div className="w-auto h-auto p-3 border border-4 shadow-xl/40 flex items-center justify-center">
-          <IoFlowerOutline />
-          THE NOSTALGIC
-        </div>
-        <div className="w-auto h-auto p-3 border border-4 shadow-xl/40 flex items-center justify-center">
-          <GiRearAura />
-          THE ETHEREAL
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Preview_Section;

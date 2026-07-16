@@ -5,7 +5,7 @@ import Info_Section from './Info_Section'
 import Footer from './Footer'
 const Homepage = () => {
   return (
-    <div>
+    <div >
       <Hero />
       <Preview_Section />
       <Info_Section />

@@ -1,24 +1,41 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
-  return (
-    <div className='w-full h-[300px] bg-black p-10'>
-        <div className='w-full mr-10 h-1 bg-gray-600 '></div>
-        <div className='text-white font-grotesk flex justify-between py-10 '>
-            <div>
-                <h1 className='font-bold text-3xl '>ECHOSELF</h1>
-                <span className='text-gray-500 mr-3 '>MADE WITH SPOTIFY API.</span>
-                <span className='text-gray-500'>NOT AFFLIATED WITH SPOTIFY</span>
-            </div>
-            <div className='flex gap-5'>
-                <h2>PRIVACY POLICY</h2>
-                <h2>TERMS OF USE</h2>
-                <h2>CONTACT</h2>
-            </div>
-        </div>
+    return (
+        <footer className="w-full bg-black px-4 sm:px-6 lg:px-10 py-10">
+            <div className="w-full h-px bg-gray-600"></div>
 
-    </div>
-  )
-}
+            <div className="mt-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 text-white font-grotesk">
+                <div>
+                    <h1 className="text-2xl sm:text-3xl font-bold">
+                        ECHOSELF
+                    </h1>
 
-export default Footer
+                    <p className="mt-3 text-sm sm:text-base text-gray-500">
+                        MADE WITH SPOTIFY API.
+                    </p>
+
+                    <p className="text-sm sm:text-base text-gray-500">
+                        NOT AFFILIATED WITH SPOTIFY.
+                    </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm sm:text-base">
+                    <h2 className="cursor-pointer hover:text-gray-300 transition">
+                        PRIVACY POLICY
+                    </h2>
+
+                    <h2 className="cursor-pointer hover:text-gray-300 transition">
+                        TERMS OF USE
+                    </h2>
+
+                    <h2 className="cursor-pointer hover:text-gray-300 transition">
+                        CONTACT
+                    </h2>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

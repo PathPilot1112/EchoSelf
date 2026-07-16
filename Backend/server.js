@@ -192,4 +192,8 @@ app.get("/analyse", async (req, res) => {
   }
 });
 
+app.get("/health", (req, res) => {
+  res.sendStatus(200);
+});
+
 app.listen(port, () => console.log(`alter.fm backend running on :${port}`));

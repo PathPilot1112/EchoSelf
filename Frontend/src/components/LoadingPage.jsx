@@ -57,32 +57,32 @@ const LoadingPage = () => {
   }, [step]);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center font-grotesk gap-5 py-10">
+    <div className="min-h-screen w-full px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center font-grotesk gap-5 py-10">
       <span className="text-violet-600">SYSTEM IDENTITY VERIFICATION</span>
 
-      <div className="w-1/8 h-auto bg-gray-200 border border-3 border-black shadow-xl/20 flex items-center justify-center p-4 gap-3">
-        <IoMdFingerPrint className={`w-20 h-20 transition-colors duration-500 ${step >= 4 ? "text-violet-600" : step >= 3 ? "text-violet-400" : "text-black"}`} />
-        <h1 className="font-bold text-3xl">{step >= 4 ? "ANALYSIS COMPLETE" : "ECHOSELF LOADING"}</h1>
+      <div className="max-w-3xl w-full h-auto bg-gray-200 border border-3 border-black shadow-xl/20 flex flex-col sm:flex-row items-center justify-center p-4 gap-3">
+        <IoMdFingerPrint className={`w-14 h-14 sm:w-20 sm:h-20 transition-colors duration-500 ${step >= 4 ? "text-violet-600" : step >= 3 ? "text-violet-400" : "text-black"}`} />
+        <h1 className="font-bold text-xl sm:text-2xl lg:text-3xl ">{step >= 4 ? "ANALYSIS COMPLETE" : "ECHOSELF LOADING"}</h1>
       </div>
 
-      <h1 className="text-2xl font-semibold">
+      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">
         Decoding <span className="underline underline-offset-12 text-violet-500">{trackCount}</span> tracks
       </h1>
 
       <p className="text-gray-500 text-center">
-        Analysing rhythmic patterns, sonic density, and <br />
+        Analysing rhythmic patterns, sonic density, and
         genre deviation to build your digital fingerprint.
       </p>
 
       <div className="flex flex-col gap-5">
-        <div className="w-[700px] border-4 border-black shadow-2xl bg-violet-200 flex justify-between items-center px-12 py-4">
+        <div className="w-full max-w-3xl border-4 border-black shadow-2xl bg-violet-200 flex flex-col sm:flex-row items-center px-4 sm:px-8 py-4">
           <span className="font-mono text-sm">Step 01</span>
-          <h1 className="font-semibold text-xl">Fetching top tracks</h1>
+          <h1 className="font-semibold text-sm sm:text-lg lg:text-xl">Fetching top tracks</h1>
           <span className="font-mono text-sm text-violet-700 font-bold">COMPLETED</span>
         </div>
 
         <div
-          className="w-[700px] border-4 border-black shadow-2xl flex justify-between items-center px-12 py-4 relative overflow-hidden"
+          className="w-full max-w-3xl border-4 border-black shadow-2xl flex flex-col sm:flex-row items-center px-4 sm:px-8 py-4 relative overflow-hidden"
           style={{ background: step2Progress >= 100 ? "#ddd6fe" : "#f3f4f6" }}
         >
           <div className="absolute inset-0 bg-violet-400" style={{ width: `${step2Progress}%`, opacity: step2Progress >= 100 ? 0 : 0.25, transition: "width 0.05s linear" }} />
@@ -94,7 +94,7 @@ const LoadingPage = () => {
         </div>
 
         <div
-          className="w-[700px] border-4 shadow-2xl flex justify-between items-center px-12 py-4 relative overflow-hidden"
+          className="w-full max-w-3xl border-4 shadow-2xl flex flex-col sm:flex-row items-center px-4 sm:px-8 py-4 relative overflow-hidden"
           style={{ borderStyle: step < 3 ? "dashed" : "solid", borderColor: "black", background: step3Progress >= 100 ? "#ddd6fe" : step >= 3 ? "#f3f4f6" : "#f9fafb" }}
         >
           <div className="absolute inset-0 bg-violet-400" style={{ width: `${step3Progress}%`, opacity: step3Progress >= 100 ? 0 : 0.25, transition: "width 0.05s linear" }} />
@@ -108,7 +108,8 @@ const LoadingPage = () => {
         </div>
       </div>
 
-      <div className="mt-10 flex gap-20 w-1/4">
+      <div className="mt-10 flex w-full max-w-xl
+grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="w-full h-auto p-4 bg-gray-200 border border-black border-3 shadow-xl">
           <h1 className="font-bold text-sm">BITRATE</h1>
           <span className="text-sm">320kbps Lossless</span>
@@ -123,7 +124,7 @@ const LoadingPage = () => {
 
       {step >= 4 && (
         <p className="mt-4 font-mono text-sm text-violet-600 animate-pulse">
-          <button className="bg-violet-500 border border-black border-4 shadow-xl/20 cursor-pointer p-4 text-white " onClick={navigate('/result')}>See your card</button>
+          <button className="bg-violet-500 border border-black border-4 shadow-xl/20 cursor-pointer px-6 py-4 w-full sm:w-auto text-white " onClick={navigate('/result')}>See your card</button>
         </p>
       )}
     </div>
